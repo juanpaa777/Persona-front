@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Estado } from '../models/estado.model';
 import { environment } from 'src/environments/environment';
 
+
 @Injectable({ providedIn: 'root' })
 export class EstadoService {
   private apiUrl = `${environment.apiUrl}/estados`;
