@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'personas', component: PersonaListComponent },
   { path: 'personas/nueva', component: PersonaFormComponent },
   { path: 'personas/editar/:id', component: PersonaFormComponent },
-  { path: '', redirectTo: 'entidades', pathMatch: 'full' }
+  { path: '', redirectTo: 'entidades', pathMatch: 'full' },
+  { path: '**', redirectTo: 'entidades' } 
 ];
 
 @NgModule({

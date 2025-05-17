@@ -1,38 +1,41 @@
-<div class="card shadow p-4">
-    <h3>Nueva Persona</h3>
-    <form (ngSubmit)="guardar()">
-        <div class="mb-3">
-            <label>Nombre</label>
-            <input class="form-control" [(ngModel)]="persona.nombre" name="nombre" required>
-        </div>
+<div class="card shadow p-4 mb-4">
+  <h3>Nueva Persona</h3>
+  <form (ngSubmit)="guardar()">
+    <div class="row">
+      <div class="mb-3 col-md-6">
+        <label>Nombre</label>
+        <input class="form-control" [(ngModel)]="persona.nombre" name="nombre" required>
+      </div>
 
-        <div class="mb-3">
-            <label>Apellido</label>
-            <input class="form-control" [(ngModel)]="persona.apellido" name="apellido" required>
-        </div>
+      <div class="mb-3 col-md-6">
+        <label>Apellido</label>
+        <input class="form-control" [(ngModel)]="persona.apellido" name="apellido" required>
+      </div>
+    </div>
 
-        <div class="mb-3">
-            <label>Edad</label>
-            <input type="number" class="form-control" [(ngModel)]="persona.edad" name="edad" required>
-        </div>
+    <div class="row">
+      <div class="mb-3 col-md-6">
+        <label>Edad</label>
+        <input type="number" class="form-control" [(ngModel)]="persona.edad" name="edad" required>
+      </div>
 
-        <div class="mb-3">
-            <label>País</label>
-            <select class="form-select" name="pais" (change)="cargarEstadosPorPaisId($event)">
-                <option value="" disabled selected>Seleccione un país</option>
-                <option *ngFor="let pais of paises" [value]="pais.id">{{ pais.nombre }}</option>
-            </select>
-        </div>
+      <div class="mb-3 col-md-6">
+        <label>País</label>
+        <select class="form-select" name="pais" (change)="cargarEstadosPorPaisId($event)">
+          <option value="" disabled selected>Seleccione un país</option>
+          <option *ngFor="let pais of paises" [value]="pais.id">{{ pais.nombre }}</option>
+        </select>
+      </div>
+    </div>
 
-        <div class="mb-3">
-            <label>Estado</label>
+    <div class="mb-3">
+      <label>Estado</label>
+      <select class="form-select" [(ngModel)]="persona.estado" name="estado">
+        <option *ngFor="let estado of estados" [ngValue]="estado">{{ estado.nombre }}</option>
+      </select>
+    </div>
 
-            <select class="form-select" [(ngModel)]="persona.estado" name="estado">
-                <option *ngFor="let estado of estados" [ngValue]="estado">{{ estado.nombre }}</option>
-            </select>
-        </div>
-
-        <button class="btn btn-success">Guardar</button>
-        <a routerLink="/personas" class="btn btn-secondary ms-2">Cancelar</a>
-    </form>
+    <button class="btn btn-success">Guardar</button>
+    <a routerLink="/personas" class="btn btn-secondary ms-2">Cancelar</a>
+  </form>
 </div>

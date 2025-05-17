@@ -1,20 +1,17 @@
-<div class="card shadow">
-    <div class="card-body">
-      <h3>{{ esEdicion ? 'Editar' : 'Crear' }} Entidad</h3>
-  
-      <form [formGroup]="entidadForm" (ngSubmit)="guardar()" class="mt-3">
-        <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" id="nombre" formControlName="nombre" class="form-control"
-                 [ngClass]="{'is-invalid': entidadForm.get('nombre')?.invalid && entidadForm.get('nombre')?.touched}">
-          <div class="invalid-feedback">El nombre es obligatorio.</div>
-        </div>
-  
-        <button class="btn btn-success" type="submit" [disabled]="entidadForm.invalid">
-          {{ esEdicion ? 'Actualizar' : 'Guardar' }}
-        </button>
-        <a class="btn btn-secondary ms-2" routerLink="/entidades">Cancelar</a>
-      </form>
+<div class="card shadow p-4 mb-4">
+  <h3>{{ esEdicion ? 'Editar' : 'Crear' }} Entidad</h3>
+
+  <form [formGroup]="entidadForm" (ngSubmit)="guardar()" class="mt-3">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" id="nombre" formControlName="nombre" class="form-control"
+             [ngClass]="{'is-invalid': entidadForm.get('nombre')?.invalid && entidadForm.get('nombre')?.touched}">
+      <div class="invalid-feedback">El nombre es obligatorio.</div>
     </div>
-  </div>
-  
+
+    <button class="btn btn-success" type="submit" [disabled]="entidadForm.invalid">
+      {{ esEdicion ? 'Actualizar' : 'Guardar' }}
+    </button>
+    <a class="btn btn-secondary ms-2" routerLink="/entidades">Cancelar</a>
+  </form>
+</div>

@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+/* Transiciones suaves y mejoras responsivas */
+.navbar-nav .nav-link {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107;
+}
+
+.card, .btn, input, select {
+  transition: all 0.3s ease-in-out;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}

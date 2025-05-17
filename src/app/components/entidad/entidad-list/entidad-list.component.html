@@ -1,29 +1,28 @@
-<div class="card shadow">
-    <div class="card-body">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h3 class="mb-0">Entidades registradas</h3>
-        <a routerLink="/entidades/nueva" class="btn btn-primary">+ Nueva Entidad</a>
-      </div>
-  
-      <table class="table table-striped table-hover">
-        <thead class="table-dark">
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let entidad of entidades">
-            <td>{{ entidad.id }}</td>
-            <td>{{ entidad.nombre }}</td>
-            <td>
-              <button class="btn btn-sm btn-info me-2" (click)="editarEntidad(entidad.id!)">Editar</button>
-              <button class="btn btn-sm btn-danger" (click)="eliminarEntidad(entidad.id!)">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="card shadow p-4 mb-4">
+  <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+    <h3 class="mb-0">Entidades registradas</h3>
+    <a routerLink="/entidades/nueva" class="btn btn-primary mt-2 mt-lg-0">+ Nueva Entidad</a>
   </div>
-  
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entidad of entidades">
+          <td>{{ entidad.id }}</td>
+          <td>{{ entidad.nombre }}</td>
+          <td class="d-flex flex-wrap gap-1">
+            <button class="btn btn-sm btn-info" (click)="editarEntidad(entidad.id!)">Editar</button>
+            <button class="btn btn-sm btn-danger" (click)="eliminarEntidad(entidad.id!)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
