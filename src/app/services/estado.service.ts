@@ -5,7 +5,7 @@ import { Estado } from '../models/estado.model';
 
 @Injectable({ providedIn: 'root' })
 export class EstadoService {
-  private apiUrl = 'http://localhost:8080/estados';
+  private apiUrl = 'https://persona-back-10-production.up.railway.app/estados';
 
   constructor(private http: HttpClient) {}
 
